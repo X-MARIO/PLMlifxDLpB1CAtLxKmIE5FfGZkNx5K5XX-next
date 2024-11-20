@@ -1,10 +1,16 @@
 import Image from "next/image";
 import avatarSrc from "./avatar.png";
 import React from "react";
+import { clsx } from "clsx";
 
-export const Profile = () => {
+export const Profile = ({ className }: { className: string }) => {
   return (
-    <div className="flex items-center gap-2 text-start text-teal-600">
+    <div
+      className={clsx(
+        "flex items-center gap-2 text-start text-teal-600",
+        className,
+      )}
+    >
       <Image
         src={avatarSrc}
         alt={"avatar"}
