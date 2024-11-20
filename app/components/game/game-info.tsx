@@ -1,5 +1,7 @@
-import {Symbol} from "../types";
-import {GameSymbol} from "./GameSymbol";
+import {Symbol} from "./types";
+import {GameSymbol} from "./game-symbol";
+
+import styles from "./game.module.css";
 
 export const GameInfo = ({isDraw, winnerSymbol, currentStep}: {
     isDraw: boolean,
@@ -8,7 +10,7 @@ export const GameInfo = ({isDraw, winnerSymbol, currentStep}: {
 }) => {
     if (isDraw) {
         return (
-            <div className="game-info">
+            <div className={styles['game-info']}>
                 Ничья
             </div>
         )
@@ -16,14 +18,14 @@ export const GameInfo = ({isDraw, winnerSymbol, currentStep}: {
 
     if (winnerSymbol) {
         return (
-            <div className="game-info">
+            <div className={styles['game-info']}>
                 Победитель: <GameSymbol symbol={winnerSymbol}/>
             </div>
         )
     }
 
     return (
-        <div className="game-info">
+        <div className={styles['game-info']}>
             Ход: <GameSymbol symbol={currentStep}/>
         </div>
     )

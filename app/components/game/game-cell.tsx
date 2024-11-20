@@ -1,5 +1,7 @@
-import {Symbol} from "../types";
-import {GameSymbol} from "./GameSymbol";
+import {Symbol} from "./types";
+import {GameSymbol} from "./game-symbol";
+
+import styles from "./game.module.css";
 
 export const GameCell = ({isWinner, onClick, symbol}: {
     isWinner: boolean,
@@ -8,7 +10,7 @@ export const GameCell = ({isWinner, onClick, symbol}: {
 }) => {
     return (
         <button
-            className={`cell ${isWinner ? 'cell--win' : ''}`}
+            className={`${styles['cell']} ${isWinner ? `${styles['cell--win']}` : ''}`}
             onClick={onClick}
         >{symbol ? <GameSymbol symbol={symbol}/> : null}</button>
     )

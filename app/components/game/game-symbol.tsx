@@ -1,4 +1,6 @@
-import {Symbol, SYMBOL_O, SYMBOL_X} from "../types";
+import {Symbol, SYMBOL_O, SYMBOL_X} from "./types";
+
+import styles from "./game.module.css";
 
 export const GameSymbol = ({symbol}: { symbol: Symbol }) => {
     const getSymbolClassName = (symbol: Symbol) => {
@@ -8,6 +10,6 @@ export const GameSymbol = ({symbol}: { symbol: Symbol }) => {
     }
 
     return (
-        <span className={`symbol ${getSymbolClassName(symbol)}`}>{symbol}</span>
+        <span className={`${styles['symbol']} ${styles[getSymbolClassName(symbol)]}`}>{symbol}</span>
     )
 }
