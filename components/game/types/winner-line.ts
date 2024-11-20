@@ -1,1 +1,0 @@
-export type WinnerLine = [number, number, number];

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import logoSrc from "./logo.svg";
-import avatarSrc from "./avatar.png";
+import { Profile } from "../profile";
 
 export const Header = () => {
   return (
@@ -13,19 +13,7 @@ export const Header = () => {
         Играть
       </button>
       <button className="ml-auto flex items-center gap-2 text-start text-teal-600 hover:text-teal-500 transition-colors">
-        <Image
-          src={avatarSrc}
-          alt={"avatar"}
-          unoptimized
-          width={48}
-          height={48}
-        />
-        <div>
-          <div className="text-lg leading-tight">Paromovevg</div>
-          <div className="text-slate-400 text-xs leading-tight">
-            Рейтинг: 1230
-          </div>
-        </div>
+        <Profile />
         <svg
           width="18"
           height="18"
